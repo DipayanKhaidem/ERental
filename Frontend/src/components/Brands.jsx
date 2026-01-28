@@ -1,0 +1,1 @@
+//Display available brands of devices for rent in  Card format
