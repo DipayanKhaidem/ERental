@@ -21,17 +21,18 @@ const featuredDevices=[
 
 export default function FeaturedDevicesCarousel(){
     return(
-        <section className="max-w-7xl mx-auto px-4 py-10">
+        
+        <section className="max-w-7xl mx-auto px-4 py-10 ">
             <h2 className="text-center text-5xl md:text-6xl font-extrabold">
                 <span className="text-base-100">F</span>
                 <span className="text-blue-400">eatured &nbsp;</span>
                 <span className="text-base-100">D</span>
                 <span className="text-blue-400">evices</span>
             </h2>
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mg:grid-cols-4 gap-8">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 ">
                
                 {featuredDevices.map(device=>(
-                    <div key={device.id} className="card bg-base-100 w-96 shadow-sm">
+                    <div key={device.id} className="card bg-base-100 w-full shadow-sm">
                         <figure className="px-10 pt-10">
                             <img src={device.img} alt="Device Image" className="rounded-xl" /> 
                         </figure>
@@ -44,7 +45,7 @@ export default function FeaturedDevicesCarousel(){
                             
                     </div>    
                 ))}
-                
+               
             </div>
         </section>
     )
