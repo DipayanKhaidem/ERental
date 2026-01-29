@@ -23,10 +23,10 @@ export default function Navbar(){
             </div>
             <ul 
             tableIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                <li><a>Login</a></li>
-                <li><a>Categories</a></li>
-                <li><a>Featured Devices</a></li>
+            className="menu menu-sm dropdown-content bg-base-100 text-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-extrabold text-white">
+                <li><a href="">Login</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#featuredDevices">Featured Devices</a></li>
             </ul>
         </div>
     </div>

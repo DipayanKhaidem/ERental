@@ -22,7 +22,7 @@ const featuredDevices=[
 export default function FeaturedDevicesCarousel(){
     return(
         
-        <section className="max-w-7xl mx-auto px-4 py-10 ">
+        <section id="featuredDevices" className="max-w-7xl mx-auto px-4 py-10 ">
             <h2 className="text-center text-5xl md:text-6xl font-extrabold">
                 <span className="text-base-100">F</span>
                 <span className="text-blue-400">eatured &nbsp;</span>
