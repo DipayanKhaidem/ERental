@@ -24,7 +24,7 @@ export default function Login({isOpen, onClose})
 
       <button className="btn bg-blue-400 mt-4" type="submit">Login</button>
       <p className="text-sm text-center mt-3 text-blue-300">Don't have an account?{" "}
-        <Link to="/signup" className="text-blue-500 font-semibold hover:underline" onClick={onClose}>Signup</Link>
+        <Link to="/SignUp" className="text-blue-500 font-semibold hover:underline" onClick={onClose}>Signup</Link>
       </p>
 
 

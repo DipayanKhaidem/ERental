@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import {useState} from "react";
 import Footer from "./components/Footer";
 import Login from "./components/Login"
+import SignUp  from "./components/SignUp";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/details" element={<DetailedPage />}/> */}
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
 
         <Footer />
