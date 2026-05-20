@@ -1,4 +1,5 @@
 import 'animate.css';
+import {Link, useNavigate } from "react-router-dom";
 const categories = [
   {
     id: 1,
@@ -26,7 +27,18 @@ const categories = [
   }
 ];
 
-export default function Categories() {
+export default function Categories({isLoggedIn, openLogin}) 
+{
+
+  const navigate=useNavigate();
+
+  const handleProtectedNavigation=(categoryId)=>{
+    if(isLoggedIn){
+      navigate(`/category/${categoryId}`)
+    }else{
+      openLogin();
+    }
+  };
   return (
     <section id="categories" className="max-w-7xl mx-auto px-4 py-10">
       <h2 className="animate__animated animate__fadeInDownBig animate__delay-200ms text-center text-5xl md:text-6xl font-extrabold">
@@ -48,7 +60,8 @@ export default function Categories() {
               <h3 className="card-title text-blue-400 justify-center font-extra-bold lg:text-2xl">{cat.name}</h3>
               <p className="text-sm text-base-100 font-bold">{cat.desc}</p>
               <div className="card-actions justify-center">
-                <button className="btn btn-primary">Check Out</button>
+                <button className="btn btn-primary"
+                onClick={() => handleProtectedNavigation(cat.id)}>Check Out</button>
               </div>
             </div>
           </div>

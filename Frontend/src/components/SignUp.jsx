@@ -14,9 +14,9 @@ export default function SignUp() {
   const passwordValid = hasNumber && hasLower && hasUpper && hasLength;
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-base-100">
+    <div className="flex justify-center items-center min-h-screen ">
 
-      <div className="card card-side bg-base-100 shadow-xl shadow-white max-w-3xl">
+      <div className="card card-side bg-base-100 shadow-xl shadow-blue-500 max-w-3xl">
 
         {/* Image */}
         <figure className="w-1/2">
