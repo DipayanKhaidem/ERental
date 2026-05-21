@@ -1,3 +1,5 @@
+//This file defines what a user looks like in our database
+
 const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     username:{

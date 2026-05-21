@@ -1,0 +1,41 @@
+# E-Rental Project Documentation
+
+## Current Status
+Phase: Backend Initialization & Frontend Auth Wiring
+Pending: Connecting MongoDB Atlas and writing `server.js`
+
+## 1. Frontend Development (React + Vite + Tailwind CSS)
+### Structure & Routing
+- Implemented `react-router-dom` for Single Page Application (SPA) navigation.
+- Configured main routes in `App.jsx` (`/`, `/SignUp`).
+
+### Components & UI
+- **Navbar:** Built a dynamic, scroll-responsive navbar that transitions from glassmorphism to a solid background, adapting text color.
+- **SignUp:** Polished UI with Tailwind contrasts, custom drop-shadows, input focus states, and real-time password validation UI.
+- **Login Modal:** Created a fully functional controlled form overlay (`z-50`) with backdrop blur. Captures email/password state and prevents default form reloading.
+- **Home Page:** Integrated Hero, Categories, Featured Devices, and Brands components.
+
+### Authentication Logic (Frontend)
+- Centralized global auth state (`isLoggedIn`, `showLogin`) in `App.jsx` and passed via props.
+- Created a "Button Interceptor" pattern using `useNavigate`:
+  - Unauthenticated users clicking "Check Out" or "View Details" are prompted with the Login Modal.
+  - Authenticated users are routed seamlessly to the requested page.
+
+## 2. Backend Development (Node.js + Express)
+### Setup
+- Initialized separate `Backend` directory to prevent dependency conflicts with the frontend.
+- Installed core packages: `express`, `mongoose`, `bcryptjs`, `jsonwebtoken`, `cors`, `dotenv`.
+- Configured `nodemon` for active development.
+
+### Database & Models
+- **User Model (`models/User.js`):** Created Mongoose schema defining `username`, `email` (unique), `password`, and `role` (default: 'user').
+
+### Authentication API (`routes/auth.js`)
+- **POST `/api/auth/register`:** Checks for existing users, securely hashes passwords using `bcryptjs` (salt factor 10), and stores the new user in MongoDB.
+- **POST `/api/auth/login`:** Validates credentials, compares hashed passwords, and generates a JSON Web Token (`jsonwebtoken`) valid for 1 day.
+
+## Next Steps
+1. Create `.env` file in the Backend directory and add the `MONGO_URI`, `PORT`, and `JWT_SECRET`.
+2. Create `server.js` to initialize the Express app, connect to MongoDB Atlas, and hook up the `/api/auth` routes.
+3. Test backend endpoints using Thunder Client in VS Code.
+4. Update the Frontend `Login.jsx` and `SignUp.jsx` to make actual `fetch()` calls to the backend.
