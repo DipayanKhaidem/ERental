@@ -20,7 +20,7 @@ function App() {
       <Router>
         
        
-        <Navbar openLogin={openLogin} isLoggedIn={isLoggedIn} />
+        <Navbar openLogin={openLogin} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
         <Routes>
          
